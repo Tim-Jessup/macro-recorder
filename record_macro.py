@@ -3,7 +3,7 @@ import time
 
 actions = []
 pressed_keys = set()
-recording_time = 10  # seconds
+recording_time = 10    # <-- change this if you want a longer/shorter record time
 
 def on_click(x, y, button, pressed):
     if pressed:
@@ -46,14 +46,14 @@ def main():
     with mouse.Listener(on_click=on_click) as mouse_listener, \
          keyboard.Listener(on_press=on_press, on_release=on_release) as keyboard_listener:
 
-        time.sleep(recording_time)  # <-- change this if you want a longer/shorter record time
+        time.sleep(recording_time)
 
     with open("macro_playback.py", "w") as f:
         f.write("import pyautogui\nimport time\n\n")
         f.write("print('Starting playback in 3 seconds...')\n")
         f.write("time.sleep(3)  # wait before starting playback\n\n")
 
-        f.write("for i in range(10):\n")  # <-- change this if you want to repeat the actions more or less times
+        f.write("for i in range(10):  # <-- change this if you want to repeat the actions more or fewer times\n")  
 
         for action in actions:
             f.write("   " + action + "\n")
