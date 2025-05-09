@@ -21,3 +21,9 @@ A lightweight Python-based macro recorder that captures mouse clicks and keyboar
 Install dependencies:
 ```bash
 pip install pyautogui pynput
+```
+
+### Implementation
+
+Launching the recorder from VScode does not work; Execute using shell commands.
+Produced macro scripts can be run from VSCode.
