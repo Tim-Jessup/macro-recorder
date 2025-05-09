@@ -23,7 +23,34 @@ Install dependencies:
 pip install pyautogui pynput
 ```
 
-### Implementation
+## Recording a Macro
+Run the recorder:
 
-Launching the recorder from VScode does not work; Execute using shell commands.
-Produced macro scripts can be run from VSCode.
+``` bash
+python record_macro.py
+```
+
+* You'll get a 3-second countdown.
+* The recorder runs for 20 seconds by default.
+* Mouse clicks and keystrokes are saved to macro_playback.py.
+
+### Playing Back the Macro
+After recording:
+
+``` bash
+python macro_playback.py
+```
+
+This script waits 3 seconds, then replays your actions.
+
+## Customization
+* Adjust the recording duration in `record_macro.py (recording_time)`
+* Modify delays or actions directly in `macro_playback.py`
+
+## Known Limitations
+* Mouse movements and scroll events are not recorded (yet)
+* Complex modifier combos may need manual tuning
+* Must be run from a system terminal (not inside VS Code's terminal)
+
+## License
+MIT License
